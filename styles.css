@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Fira+Mono:wght@400&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Fira Mono", monospace;
+}
+
+body.light-theme {
+    background-color: #f8f8f8;
+}
+body.dark-theme {
+    background-color: #1d1f21;
+}
+
+a {
+    text-decoration: none;
+}
+
+#global-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#logo-container {
+    position: absolute;
+    bottom: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 4em 0em .5em 0em;
+}
+
+#logo {
+    width: auto;
+    height: 6rem;
+    transition: .5s ease;
+    margin-bottom: .5em;
+}
+
+.light-theme #logo, #logo:hover {
+    filter: invert(100%);
+}
+
+.light-theme #logo:hover {
+    filter: invert(0%);
+}
+
+#startpage {
+    font-family: 'Josefin Sans', monospace;
+    font-weight: 300;
+    font-size: 3.5rem;
+}
+
+.light-theme #startpage {
+    color: #1d1f21;
+}
+.dark-theme #startpage {
+    color: #ffffff;
+}
+
+#search {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.light-theme #search {
+    background: #f8f8f8;
+}
+.dark-theme #search {
+    background: #1d1f21;
+}
+
+#search-field {
+    width: 90%;
+    height: auto;
+    font-size: 4em;
+    border: solid 0px #1d1f21;
+    outline: none;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.light-theme #search-field {
+    color: #1d1f21;
+    background: #f8f8f8;
+}
+.dark-theme #search-field {
+    color: #ffffff;
+    background: #1d1f21;
+}
+
+#bookmark-card-container {
+    position: absolute;
+    top: 44vh;
+    width: 60%;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+    grid-column: span 1;
+    text-align: center;
+}
+
+.card > .card-inner-container > .card-item:first-child {
+    font-size: 1.5em;
+}
+
+#help {
+    position: absolute;
+    right: 1%;
+    bottom: 1%;
+    font-size: .8em;
+    color: #afafaf;
+}
+
+@media only screen and (max-width: 600px) {
+    #global-container {
+        width: auto;
+        height: auto;
+    }
+    #logo-container {
+        position: relative;
+        top: 0;
+    }
+    #bookmark-card-container {
+        position: relative;
+        top: 0;
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+    #help {
+        position: relative;
+        top: 0;
+        margin: 1em 0em;
+    }
+}
+
